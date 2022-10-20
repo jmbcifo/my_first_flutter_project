@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           ButtonControl(
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             },
             icon: Icons.remove,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           FloatingActionButton(
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 counter.value = 0;
               });
             },
-            child: Text(
+            child: const Text(
               "AC",
               style: TextStyle(fontSize: 20),
             ),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text(
           counter.value.toString(),
-          style: TextStyle(fontSize: 50),
+          style: const TextStyle(fontSize: 50),
         ),
       ),
     );

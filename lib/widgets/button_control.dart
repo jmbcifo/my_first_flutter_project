@@ -9,12 +9,12 @@ class ButtonControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      onPressed: onPressed,
       child: Icon(
         icon,
         color: Colors.white,
         size: 30,
       ),
-      onPressed: onPressed,
     );
   }
 }
