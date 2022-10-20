@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutter_project/utils/counter.dart';
+import 'package:my_first_flutter_project/widgets/button_control.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,13 +16,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            counter.value++;
-            print(counter.value);
-          });
-        },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ButtonControl(
+            icon: Icons.add,
+            onPressed: () {
+              setState(() {
+                //counter.value++;
+                counter.increment();
+              });
+            },
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          ButtonControl(
+            onPressed: () {
+              setState(() {
+                counter.value--;
+              });
+            },
+            icon: Icons.remove,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                counter.value = 0;
+              });
+            },
+            child: Text(
+              "AC",
+              style: TextStyle(fontSize: 20),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Text(
