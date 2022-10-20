@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter_project/utils/counter.dart';
+import 'package:get/get.dart';
+import 'package:my_first_flutter_project/controllers/counter_controller.dart';
 import 'package:my_first_flutter_project/widgets/button_control.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  final Counter counter = Counter();
+class HomePageGetx extends StatelessWidget {
+  const HomePageGetx({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final CounterController counterController = Get.put(CounterController());
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: Row(
@@ -22,10 +17,7 @@ class _HomePageState extends State<HomePage> {
           ButtonControl(
             icon: Icons.add,
             onPressed: () {
-              setState(() {
-                //counter.value++;
-                counter.increment();
-              });
+              counterController.increment();
             },
           ),
           const SizedBox(
@@ -33,9 +25,7 @@ class _HomePageState extends State<HomePage> {
           ),
           ButtonControl(
             onPressed: () {
-              setState(() {
-                counter.decrement();
-              });
+              counterController.decrement();
             },
             icon: Icons.remove,
           ),
@@ -44,9 +34,7 @@ class _HomePageState extends State<HomePage> {
           ),
           FloatingActionButton(
             onPressed: () {
-              setState(() {
-                counter.clear();
-              });
+              counterController.clear();
             },
             child: const Text(
               "AC",
@@ -55,10 +43,12 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Center(
-        child: Text(
-          counter.value.toString(),
-          style: const TextStyle(fontSize: 50),
+      body: Obx(
+        () => Center(
+          child: Text(
+            counterController.result.value.toString(),
+            style: const TextStyle(fontSize: 50),
+          ),
         ),
       ),
     );
