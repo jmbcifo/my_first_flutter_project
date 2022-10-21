@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           ButtonControl(
+            heroTag: "Boton 1",
             icon: Icons.add,
             onPressed: () {
               setState(() {
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage> {
             width: 10,
           ),
           ButtonControl(
+            heroTag: "Boton 2",
             onPressed: () {
               setState(() {
                 counter.decrement();
