@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_first_flutter_project/controllers/counter_controller.dart';
 
 import 'package:my_first_flutter_project/pages/page_2.dart';
+import 'package:my_first_flutter_project/routes/app_routes.dart';
 import 'package:my_first_flutter_project/widgets/button_control.dart';
 
 class HomePageGetx extends StatelessWidget {
@@ -48,7 +49,7 @@ class HomePageGetx extends StatelessWidget {
           FloatingActionButton(
             heroTag: "Boton 4",
             onPressed: () {
-              Get.off(() => Page2());
+              Get.offNamed(Routes.PAGE_2);
             },
             child: Icon(Icons.arrow_forward_ios),
           )

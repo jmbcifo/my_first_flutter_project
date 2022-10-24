@@ -7,7 +7,7 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //CounterController counterController = Get.find();
+    CounterController counterController = Get.find();
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -29,7 +29,7 @@ class Page2 extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               Text(
-                "",
+                counterController.result.value.toString(),
                 style: TextStyle(fontSize: 20),
               ),
             ],
