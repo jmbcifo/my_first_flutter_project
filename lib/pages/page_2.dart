@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_first_flutter_project/controllers/counter_controller.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    CounterController counterController = Get.find();
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_first_flutter_project/controllers/counter_controller.dart';
 
 import 'package:my_first_flutter_project/pages/page_2.dart';
 import 'package:my_first_flutter_project/widgets/button_control.dart';
@@ -9,6 +10,7 @@ class HomePageGetx extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CounterController counterController = Get.find();
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: Row(
@@ -17,7 +19,9 @@ class HomePageGetx extends StatelessWidget {
           ButtonControl(
             heroTag: "Boton 1",
             icon: Icons.add,
-            onPressed: () {},
+            onPressed: () {
+              counterController.increment();
+            },
           ),
           const SizedBox(
             width: 10,
@@ -50,10 +54,12 @@ class HomePageGetx extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: Text(
-          "",
-          style: const TextStyle(fontSize: 50),
+      body: Obx(
+        () => Center(
+          child: Text(
+            counterController.result.value.toString(),
+            style: const TextStyle(fontSize: 50),
+          ),
         ),
       ),
     );
