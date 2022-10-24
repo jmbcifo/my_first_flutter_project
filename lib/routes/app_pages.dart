@@ -14,6 +14,7 @@ class AppPages {
     GetPage(
       name: Routes.PAGE_2,
       page: () => const Page2(),
+      binding: CounterBinding(),
     )
   ];
 }

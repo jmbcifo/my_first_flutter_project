@@ -7,7 +7,7 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CounterController counterController = Get.find();
+    //CounterController counterController = Get.find();
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

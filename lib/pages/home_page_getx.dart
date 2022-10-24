@@ -48,7 +48,7 @@ class HomePageGetx extends StatelessWidget {
           FloatingActionButton(
             heroTag: "Boton 4",
             onPressed: () {
-              Get.to(() => Page2());
+              Get.off(() => Page2());
             },
             child: Icon(Icons.arrow_forward_ios),
           )
