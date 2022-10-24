@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_flutter_project/controllers/counter_controller.dart';
+
 import 'package:my_first_flutter_project/pages/page_2.dart';
 import 'package:my_first_flutter_project/widgets/button_control.dart';
 
@@ -11,9 +9,6 @@ class HomePageGetx extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CounterController counterController = Get.put(
-      CounterController(),
-    );
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: Row(
@@ -22,18 +17,14 @@ class HomePageGetx extends StatelessWidget {
           ButtonControl(
             heroTag: "Boton 1",
             icon: Icons.add,
-            onPressed: () {
-              counterController.increment();
-            },
+            onPressed: () {},
           ),
           const SizedBox(
             width: 10,
           ),
           ButtonControl(
             heroTag: "Boton 2",
-            onPressed: () {
-              counterController.decrement();
-            },
+            onPressed: () {},
             icon: Icons.remove,
           ),
           const SizedBox(
@@ -41,9 +32,7 @@ class HomePageGetx extends StatelessWidget {
           ),
           FloatingActionButton(
             heroTag: "Boton 3",
-            onPressed: () {
-              counterController.clear();
-            },
+            onPressed: () {},
             child: const Text(
               "AC",
               style: TextStyle(fontSize: 20),
@@ -61,12 +50,10 @@ class HomePageGetx extends StatelessWidget {
           )
         ],
       ),
-      body: Obx(
-        () => Center(
-          child: Text(
-            counterController.result.value.toString(),
-            style: const TextStyle(fontSize: 50),
-          ),
+      body: Center(
+        child: Text(
+          "",
+          style: const TextStyle(fontSize: 50),
         ),
       ),
     );
